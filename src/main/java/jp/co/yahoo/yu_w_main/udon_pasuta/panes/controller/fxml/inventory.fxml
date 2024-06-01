@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@../../css/inventory.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jp.co.yahoo.yu_w_main.udon_pasuta.panes.controller.InventoryController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-insets: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="status" prefHeight="30.0" prefWidth="199.0" text="ステータス">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="hp">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <text>HP:</text>
+                  </Label>
+                  <ProgressBar fx:id="hpBar" prefWidth="200.0" progress="1.0" style="-fx-accent: green;" translateX="50.0" translateY="5.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="XP:" fx:id="xp">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar prefWidth="200.0" progress="1.0" style="-fx-accent: green;" translateX="50.0" fx:id="xpBar" />
+               </children>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="party" text="パーティ数:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane fx:id="onigiri" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="95.0" text="おにぎりくん" />
+                        <TitledPane fx:id="soba" animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="95.0" text="そばくん" />
+                        <TitledPane fx:id="soumen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="95.0" text="そうめんさん" />
+                        <TitledPane fx:id="ebiten" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="93.0" text="えび天さん" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: black; -fx-border-color: white; -fx-border-insets: 10;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="inventory" text="持ち物">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="item" text="アイテム">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+
+            <HBox fx:id="itemBoxs" prefHeight="100.0" prefWidth="200.0" />
+            <Label fx:id="tool" text="道具" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <HBox fx:id="toolBoxs" prefHeight="100.0" prefWidth="200.0" />
+            <Label fx:id="saifu" text="さいふ" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="tenkasu" text="  00000001天かす" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

@@ -1,0 +1,25 @@
+.label{
+    -fx-text-fill: white;
+}
+
+.titled-pane {
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.titled-pane > .content {
+    -fx-background-color: rgb(75, 75, 75);
+}
+
+.titled-pane > .title {
+    -fx-background-color: black;
+}
+    
+
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: white;
+}
+
+.titled-pane:focused > .title > .arrow-button > .arrow {
+    -fx-background-color: gray;
+}

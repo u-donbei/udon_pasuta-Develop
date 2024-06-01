@@ -1,0 +1,22 @@
+2024/06/01 14:05:26 DEBUG udon-logger JavaFX Application Thread - APPLICATION START.
+2024/06/01 14:05:26 DEBUG udon-logger JavaFX Application Thread - MBean Register.
+2024/06/01 14:05:27 DEBUG udon-logger JavaFX Application Thread - WINDOW SHOW.
+2024/06/01 14:05:30 DEBUG udon-logger JavaFX Application Thread - game started.
+2024/06/01 14:05:30 ERROR udon-logger JavaFX Application Thread - An fatal error has occurred
+java.lang.NullPointerException: Location is required.
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3369) ~[javafx-fxml-21.0.1-win.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3332) ~[javafx-fxml-21.0.1-win.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3300) ~[javafx-fxml-21.0.1-win.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3272) ~[javafx-fxml-21.0.1-win.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.loadImpl(FXMLLoader.java:3248) ~[javafx-fxml-21.0.1-win.jar:?]
+	at javafx.fxml/javafx.fxml.FXMLLoader.load(FXMLLoader.java:3241) ~[javafx-fxml-21.0.1-win.jar:?]
+	at jp.co.yahoo.yu_w_main.udon_pasuta@1.0-beta0.0.1/jp.co.yahoo.yu_w_main.udon_pasuta.panes.LoadingPane.<init>(LoadingPane.java:16) ~[classes/:?]
+	at jp.co.yahoo.yu_w_main.udon_pasuta@1.0-beta0.0.1/jp.co.yahoo.yu_w_main.udon_pasuta.app.UdonbeiStarter.lambda$start$8(UdonbeiStarter.java:155) ~[classes/:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456) ~[javafx-graphics-21.0.1-win.jar:?]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400) ~[?:?]
+	at javafx.graphics/com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455) ~[javafx-graphics-21.0.1-win.jar:?]
+	at javafx.graphics/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95) ~[javafx-graphics-21.0.1-win.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication._runLoop(Native Method) ~[javafx-graphics-21.0.1-win.jar:?]
+	at javafx.graphics/com.sun.glass.ui.win.WinApplication.lambda$runLoop$3(WinApplication.java:185) ~[javafx-graphics-21.0.1-win.jar:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+2024/06/01 14:05:48 DEBUG udon-logger JavaFX Application Thread - APPLICATION EXIT.

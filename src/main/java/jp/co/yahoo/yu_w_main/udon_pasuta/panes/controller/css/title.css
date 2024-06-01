@@ -1,0 +1,14 @@
+/**
+ * Copyright (c) 2023 ウードン (yu_w_main@yahoo.co.jp)
+ */
+.button:hover {
+    -fx-text-fill: #a7a7a7;
+}
+
+.button:armed{
+    -fx-text-fill: #606060;
+}
+
+.button{
+    -fx-text-fill: white;
+}

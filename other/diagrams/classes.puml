@@ -1,0 +1,759 @@
+@startuml
+class User {
+- String name
+- boolean developer
++ <<Create>> User(String,boolean)
++ boolean developer()
++ String name()
+}
+class UdonDeserialize {
++ <<Create>> UdonDeserialize(Class<?>)
++ <<Create>> UdonDeserialize()
++ Udon deserialize(JsonParser,DeserializationContext)
+}
+abstract class Ally {
++ <<Create>> Ally(File)
++ {abstract}void attack(Message,Enemy)
+}
+class Negi {
++ <<Create>> Negi()
++ void use()
+}
+class Message {
++ {static} AtomicBoolean isNext
+~ ImageView text
+~ ImageView icon
+- int currentChara
+- Timeline timeline
+- Object rval
+- Button next
++ <<Create>> Message()
++ void reText(String,Image,double,Node)
++ void reText(String,Image,double,Runnable,Node)
++ void reText(String,Image,double,Runnable,Runnable,boolean,Node)
++ void reText(String,Image,double,Runnable,Runnable,Node)
++ Timeline getTimeline()
++ Button getNext()
++ void exit(Runnable)
+}
+class CollisionManager {
+- <<Create>> CollisionManager()
++ {static} void collision(Character,GameObject[][])
++ {static} void collision(Character,List<? extends GameObject>)
+}
+class Texture {
+- {static} String CURRENT_TEXTURE_DIR_NAME
+- {static} String CURRENT_TEXTURE_NAME
++ {static} String getCurrentTextureDirName()
++ {static} String getCurrentTextureName()
++ {static} void setTexture(String)
+}
+class PluginLoader {
+- {static} Path[] plugins
++ {static} PluginExecutor getExecutors()
++ {static} PluginExecutor getExecutor(String)
+}
+class PluginLoader$InfoData {
++ String name
++ String description
++ String version
++ String author
++ String moduleName
++ String runPos
++ String mainClass
++ String toString()
+}
+class Udon {
+- int stepFrameCount
+- {static} long serialVersionUID
++ {static} Technique[] techn1
++ {static} Technique[] techn2
++ {static} Technique[] techn3
++ {static} Technique[] techn4
++ {static} Technique[] techn5
++ {static} Technique[] techn6
++ {static} Technique[] techn7
++ {static} Technique[] techn8
+- SimpleIntegerProperty xp
+- SimpleIntegerProperty level
+- int tenkasu
+- boolean isDash
+- Object rval
++ <<Create>> Udon(String)
++ <<Create>> Udon()
++ {static} int getByLevelMaxHP(int)
++ int getLevel()
++ void setLevel(int)
++ void incrementLevel()
++ int attack(boolean,Message,Enemy)
++ int attack(boolean,Message,Runnable,Enemy)
++ int attack(Message,Enemy)
++ Object clone()
++ String toString()
++ void stepX(double)
++ void stepY(double)
++ int getTenkasu()
++ void setTenkasu(int)
++ boolean isDash()
++ void setDash(boolean)
++ int getXP()
++ void setXp(int)
++ void addXP(int)
++ void removeXP(int)
++ SimpleIntegerProperty xpProperty()
++ SimpleIntegerProperty levelProperty()
+}
+class Onigiri_House {
+- {static} File IMAGE
++ <<Create>> Onigiri_House()
+}
+class StatusMessage {
+- ImageView tenkasu
+- ImageView hp
+- Udon udon
++ <<Create>> StatusMessage(Udon)
++ ImageView getTenkasu()
++ ImageView getHp()
++ void reText(String,Image,double,Node)
+- void init(Udon)
+}
+class Mentsuyu {
++ <<Create>> Mentsuyu()
++ void use()
+}
+class BlueFlower {
++ {static} int ID
++ <<Create>> BlueFlower()
+}
+class Carbonara {
+- {static} ObservableList<Technique> ORIGINAL_TECHNIQUES
+- {static} File IMAGE
++ <<Create>> Carbonara()
++ int attack(Message,Character)
+}
+class GameStatusController {
++ Message mainMessage
++ void initialize(URL,ResourceBundle)
+}
+abstract class Enemy {
+- {static} long serialVersionUID
+- ObservableList<Technique> techniques
++ <<Create>> Enemy(File,Technique)
++ ObservableList<Technique> getTechniques()
++ {abstract}int attack(Message,Character)
++ int attack(Message,Runnable,Character)
++ int hashCode()
++ String toString()
+# void doUpdate()
+}
+class Technique {
+- {static} long serialVersionUID
+- String name
+- int damage
+- double mp
++ <<Create>> Technique()
++ <<Create>> Technique(String,int,double)
++ String getName()
++ void setName(String)
++ int getDamage()
++ void setDamage(int)
++ double getMp()
++ void setMp(double)
++ String makeText()
++ String toString()
++ int hashCode()
++ boolean equals(Object)
+}
+class GameViewPane {
+- World world
++ <<Create>> GameViewPane()
++ void addBlock(Field,int,int)
++ void removeBlock(int,int)
++ void addChara(Character,double,double)
++ World getWorld()
+}
+class BGMManager {
+- {static} Media field
+- {static} MediaPlayer fieldPlayer
+- {static} double volume
++ {static} void play(String)
++ {static} void stop(String)
++ {static} MediaPlayer findPlayer(String)
++ {static} double getVolume()
++ {static} void setVolume(double)
+}
+class ValueChecks {
+- <<Create>> ValueChecks()
++ {static} void checkOnString(String,String)
++ {static} void checkOnNotNegative(double,String)
+}
+class LoadingPane {
++ <<Create>> LoadingPane()
+}
+enum Facing {
++  NORTH
++  SOUTH
++  WEST
++  EAST
+}
+class ObjectBox {
+- SimpleObjectProperty<E> element
++ <<Create>> ObjectBox(E)
++ <<Create>> ObjectBox()
++ GameObject getElement()
++ void setElement(E)
+}
+class MenuController {
+- Button back
+- VBox box
+- Button exit
+- Button setting
++ void initialize(URL,ResourceBundle)
++ void onBackKeyPressed(KeyEvent)
++ void onExitKeyPressed(KeyEvent)
++ void onSettingKeyPressed(KeyEvent)
+}
+interface ActionObject {
+~ void handle(Runnable,Message)
+}
+class KizamiNori {
++ <<Create>> KizamiNori()
++ void use()
+}
+class Collections_Original {
++ {static} T getShuffle(List<T>)
+}
+class TextUtilities {
+- {static} Font font
++ {static} Image toImage(String,java.awt.Color,java.awt.Color,int,int,int)
++ {static} String convertToUnicode(String)
++ {static} String convertToPlain(String)
+}
+class Agedama {
++ <<Create>> Agedama()
++ void use()
+}
+interface Usable {
+~ void use()
+}
+class Komugiko {
++ <<Create>> Komugiko()
++ void use()
+}
+class UdonbeiStarter {
+- {static} Application theInstance
+- Object rval
+- GamePane gamePane
+- Scene mainScene
+- Timeline timeline
++ {static} void main(String[])
++ {static} Application getApplicationInstance()
++ void start(Stage)
+}
+class LogWindow {
+}
+interface UdonMonitorMBean {
+~ {static} String NAME
++ String getVersion()
++ String getRegisteredItems()
++ boolean isSnapshot()
++ boolean isDevelopmentVersion()
++ void forceExitGame()
++ {static} ObjectName createObjectName()
+}
+class Party {
+- SimpleObjectProperty<L> leader
+- ObservableList<Ally> members
++ <<Create>> Party(L,ObservableList<Ally>)
++ L getLeader()
++ ObjectProperty<L> leaderProperty()
++ ObservableList<Ally> members()
++ boolean equals(Object)
++ int hashCode()
++ String toString()
+}
+class TitlePane {
++ <<Create>> TitlePane()
+}
+class Ground {
++ {static} Image IMAGE
++ {static} int ID
++ <<Create>> Ground()
+# void doUpdate()
+}
+class BattlePane {
+- HBox root
+- VBox players
+- HBox udons
+- VBox enemy
+- ImageView enemyView
+- ImageView udonView
+- Label enemyName
+- Label udonName
+- Message message
+- Party<Udon> party
+- Party<Enemy> enemies
+- ProgressBar udonHP
++ <<Create>> BattlePane()
++ void init(Party<Udon>,Party<Enemy>)
++ void battleStart()
+}
+class Somen {
+- {static} ObservableList<Technique> ORIGINAL_TECHNIQUES
+- {static} File IMAGE
++ <<Create>> Somen()
++ void handle(Runnable,Message)
++ void attack(Message,Enemy)
++ void move(Runnable)
+}
+class ManagerProcessor {
++ boolean process(Set<? extends TypeElement>,RoundEnvironment)
++ void init(ProcessingEnvironment)
+}
+class Variable {
++ {static} Object NESTED_LOOP_RVAL
++ {static} AtomicBoolean IS_LOAD
++ {static} boolean IS_GAME_EXIT
++ {static} ArrayList<PluginExecutor> plugins
++ {static} Enemy BATTLE_TARGET
+}
+abstract class Field {
+- {static} long serialVersionUID
+# ImageView background
++ <<Create>> Field(File)
++ String toString()
+# void doUpdate()
++ ImageView getBackground()
+}
+class WorldManager {
++ {static} int[][] DEFAULT_WORLD
+- <<Create>> WorldManager()
++ {static} void buildWorld(World,GameViewPane)
+}
+class SoilRoad {
++ {static} File IMAGE
++ {static} int ID
++ <<Create>> SoilRoad()
+# void doUpdate()
+}
+class Fonts {
++ {static} Font PIXEL_MPLUS_12_18
++ {static} Font PIXEL_MPLUS_12_10
++ {static} Font getPixelMplus12(double)
+}
+class SettingPane {
+- Button sounds
+- Button back
++ <<Create>> SettingPane(Window)
+}
+class SettingPane$SoundsDialog {
+- Slider bgmS
+- Label bgmL
++ <<Create>> SoundsDialog(Window)
+}
+class Soba {
+- {static} File IMAGE
+- {static} ObservableList<Technique> ORIGINAL_TECHNIQUES
++ <<Create>> Soba()
++ void handle(Runnable,Message)
++ void attack(Message,Enemy)
++ void move(Runnable)
+}
+class GameInfo {
++ {static} String VERSION
++ {static} HashMap<String,Item> ITEMS
+}
+class MeatSauce_Fork {
+- {static} ObservableList<Technique> TECHNIQUES_ORIGINAL
++ {static} File IMAGE
++ <<Create>> MeatSauce_Fork()
++ int attack(Message,Character)
+- int randomAttack(Message,Character)
+# int AIAttack(Message,Character)
+}
+class Udon_House {
++ {static} int ID
++ <<Create>> Udon_House()
++ String toString()
++ void handle(Runnable,Message)
+}
+abstract class Tool {
++ <<Create>> Tool(Path)
+}
+class Nori {
++ <<Create>> Nori()
++ void use()
+}
+enum PathConsts {
++  HOME_DIR
++  IMAGE_DIR
++  TEXTURE_DIR
++  SAVE_DIR
++  ITEM_DIR
++  FONT_DIR
++  APP_DIR
++  FXML_DIR
++  ITEM_MODEL_DIR
++  PLUGIN_DIR
++  BGM_DIR
+- String path
+- <<Create>> PathConsts(String)
++ String getPath()
++ URI makeURI()
++ String toString()
++ {static} void reloadTexture()
+}
+class Ebi {
+- {static} File IMAGE
+- {static} ObservableList<Technique> ORIGINAL_TECHNIQUES
++ <<Create>> Ebi()
++ void attack(Message,Enemy)
++ void move(Runnable)
++ void handle(Runnable,Message)
+}
+class SoilRoadCorner1 {
++ {static} File IMAGE
++ {static} int ID
++ <<Create>> SoilRoadCorner1()
+}
+abstract class Character {
+- {static} long serialVersionUID
++ {static} String[] CHARACTERS
+- SimpleIntegerProperty hp
++ <<Create>> Character(File)
++ void setHp(int)
++ int getHp()
++ void addHp(int)
++ void removeHp(int)
++ int hashCode()
++ Object clone()
++ String toString()
++ void stepX(double)
++ void stepY(double)
++ SimpleIntegerProperty hpProperty()
+}
+class Empty {
++ <<Create>> Empty()
++ void use()
+}
+class KizamiNegi {
++ <<Create>> KizamiNegi()
++ void use()
+}
+class InventoryController {
+- {static} InventoryController instance
+- ResourceBundle resources
+- URL location
+- TitledPane ebiten
+- Label hp
+- ProgressBar hpBar
+- Label inventory
+- TitledPane onigiri
+- Label party
+- TitledPane soba
+- TitledPane soumen
+- Label status
+- Label xp
+- ProgressBar xpBar
+- Label item
+- HBox itemBoxs
+- Label tool
+- HBox toolBoxs
+- Label tenkasu
+- Label saifu
+- ObservableList<ObjectBox<Item>> items
+- ObservableList<ObjectBox<Tool>> tools
+- ImageView ebitenv
+- SimpleIntegerProperty h
++ <<Create>> InventoryController()
++ {static} InventoryController getInstance()
++ Label getTenkasu()
+~ void initialize()
++ void init(Party<Udon>)
++ void init(Party<Udon>,Message)
+}
+abstract class GameObject {
+- {static} long serialVersionUID
+- double x
+- double y
+- File imagePath
+- boolean isHited
+- ImageView imageView
++ Facing facing
+- String name
++ <<Create>> GameObject(File)
++ <<Create>> GameObject(File,String)
++ <<Create>> GameObject()
++ <<Create>> GameObject(File,double,double)
++ boolean isHited()
++ void setHited(boolean)
++ void setName(String)
++ void setX(double)
++ double getX()
++ void setY(double)
++ double getY()
++ void setImage(File)
++ File getImage()
++ ImageView getImageView()
++ boolean isHit(GameObject)
++ Object clone()
++ int hashCode()
++ boolean equals(Object)
++ {abstract}String toString()
++ void update(Runnable)
++ void moveY(double)
++ void moveX(double)
+# void doUpdate()
++ {static} GameObject getEmptyInstance()
++ String getName()
+}
+class World {
+- Field[][] blocks
++ <<Create>> World()
++ <<Create>> World(Field[][])
++ Field[][] getBlocks()
+}
+class Logging {
++ {static} Logger LOGGER
+}
+class MeatSauce_Big {
+- {static} ObservableList<Technique> TECHNIQUES_ORIGINAL
+- {static} File IMAGE
++ <<Create>> MeatSauce_Big()
++ int attack(Message,Character)
+}
+class BattleManager {
+- <<Create>> BattleManager()
++ {static} void battleStart(Party<Udon>,Enemy,Message)
++ {static} void battleStart(Party<Udon>,Enemy,Message,Runnable,Runnable)
++ {static} void battleStart(Party<Udon>,Enemy,Message,Runnable,Runnable,boolean,ProgressBar,ProgressBar)
+}
+enum ExitType {
++  PLAYER_WIN
++  PLAYER_AWAY
++  PLAYER_DIED
+}
+class TextureStructureException {
++ <<Create>> TextureStructureException(String)
+}
+abstract class Item {
+- Path modelPath
+- ModelData data
+# String description
+# String id
++ <<Create>> Item(Path)
++ Path getModelPath()
++ String toString()
++ String getDescription()
++ void setDescription(String)
+- void initModel(Path)
+}
+class Item$ModelData {
++ String name
++ String description
++ String image
++ String id
++ ModelData clone()
++ String toString()
+}
+abstract class Block {
+- {static} long serialVersionUID
++ <<Create>> Block(File)
++ Object clone()
+}
+class Inventory {
++ <<Create>> Inventory()
+}
+class ItemRegister {
++ <<Create>> ItemRegister()
++ void register(T)
++ {static} Map<String,Item> getItems()
+}
+interface Register {
+~ void register(T)
+}
+interface AutoMovedAI {
+~ void move(Runnable)
+}
+class MeatSauce {
++ {static} File IMAGE
++ {static} Technique[] originalTec
+- {static} long serialVersionUID
++ <<Create>> MeatSauce()
++ int attack(Message,Character)
++ int attack(Message,Runnable,Character)
++ void move(Runnable)
++ void handle(Runnable,Message)
+}
+class MenuPane {
++ <<Create>> MenuPane()
+}
+class TextureNotFoundException {
++ <<Create>> TextureNotFoundException(String)
+}
+abstract class Food {
+- int nutrition
+- Class<? extends Character>[] targetClass
++ <<Create>> Food(Path,int,Class<? extends Character>)
++ int getNutrition()
++ void setNutrition(int)
++ Class<? extends Character>[] getTargetClass()
++ void setTargetClass(Class<? extends Character>)
+}
+class GameManager {
+- {static} List<PluginExecutor> plugins
+~ {static} Udon udon
+~ {static} boolean isUp
+~ {static} boolean isInventory
+~ {static} double screenX
+- {static} List<Character> characters
+- {static} AnimationTimer timer
+~ {static} Party<Udon> party
+- <<Create>> GameManager()
++ {static} void gameLoop(Udon,GamePane,Scene,Stage,Scene)
++ {static} AnimationTimer getTimer()
++ {static} Udon getUdon()
++ {static} Party<Udon> getParty()
+}
+class Onigiri {
+- {static} File IMAGE
+- {static} ObservableList<Technique> ORIGINAL_TECHNIQUES
++ <<Create>> Onigiri()
++ void handle(Runnable,Message)
++ void attack(Message,Enemy)
++ void move(Runnable)
+# void doUpdate()
+}
+class TitleController {
+- ResourceBundle resources
+- URL location
+- Button exit
+- BorderPane pane
++ Button setting
++ Button start
++ {static} AtomicBoolean isGameStart
+~ void initialize()
++ void handleStart(ActionEvent)
++ void handleExit(ActionEvent)
++ void handleSetting(ActionEvent)
+}
+abstract class PluginExecutor {
+- PluginRunPos pos
++ <<Create>> PluginExecutor(PluginRunPos)
+# {abstract}void doGameLoop(Udon,GamePane,Scene,Stage,Scene)
+# {abstract}void doSetup()
++ void setUp()
++ void gameLoop(Udon,GamePane,Scene,Stage,Scene)
++ PluginRunPos getPos()
+}
+enum PluginRunPos {
++  FIRST
++  AFTER_MOVING_UDON
++  AFTER_KEYBOARD_INPUT
++  AFTER_SCREEN_TRANSITION
++  AFTER_UPDATE
++  AFTER_COLLISION
++  AFTER_CAMERA_MOVE
++  LAST
+}
+class LoadingController {
+- Label loading
++ void initialize(URL,ResourceBundle)
+}
+class GamePane {
+- {static} GamePane instance
+- StatusMessage message
+- GameViewPane gameViewPane
++ <<Create>> GamePane(Udon)
++ StatusMessage getMessage()
++ GameViewPane getGameViewPane()
++ {static} GamePane getInstance()
+}
+class UdonSerialize {
++ <<Create>> UdonSerialize(Class<Udon>)
++ <<Create>> UdonSerialize()
++ void serialize(Udon,JsonGenerator,SerializerProvider)
+}
+class UdonMonitor {
++ String getVersion()
++ String getRegisteredItems()
++ boolean isSnapshot()
++ boolean isDevelopmentVersion()
++ void forceExitGame()
+}
+class TestTool {
++ <<Create>> TestTool()
++ void use()
+}
+
+
+StdDeserializer <|-- UdonDeserialize
+ActionObject <|.. Ally
+AutoMovedAI <|.. Ally
+Character <|-- Ally
+Item <|-- Negi
+BorderPane <|-- Message
+PluginLoader +.. PluginLoader$InfoData
+Character <|-- Udon
+Block <|-- Onigiri_House
+Message <|-- StatusMessage
+Item <|-- Mentsuyu
+Field <|-- BlueFlower
+MeatSauce_Big <|-- Carbonara
+Initializable <|.. GameStatusController
+AutoMovedAI <|.. Enemy
+ActionObject <|.. Enemy
+Character <|-- Enemy
+Serializable <|.. Technique
+Pane <|-- GameViewPane
+Pane <|-- LoadingPane
+StackPane <|-- ObjectBox
+Initializable <|.. MenuController
+Food <|-- KizamiNori
+Food <|-- Agedama
+Food <|-- Komugiko
+Application <|-- UdonbeiStarter
+Stage <|-- LogWindow
+Pane <|-- TitlePane
+Field <|-- Ground
+VBox <|-- BattlePane
+Ally <|-- Somen
+AbstractProcessor <|-- ManagerProcessor
+GameObject <|-- Field
+Field <|-- SoilRoad
+BorderPane <|-- SettingPane
+SettingPane +.. SettingPane$SoundsDialog
+Stage <|-- SettingPane$SoundsDialog
+Ally <|-- Soba
+MeatSauce <|-- MeatSauce_Fork
+ActionObject <|.. Udon_House
+Block <|-- Udon_House
+Item <|-- Tool
+Food <|-- Nori
+Ally <|-- Ebi
+Field <|-- SoilRoadCorner1
+GameObject <|-- Character
+Item <|-- Empty
+Food <|-- KizamiNegi
+Cloneable <|.. GameObject
+Serializable <|.. GameObject
+MeatSauce_Fork <|-- MeatSauce_Big
+Exception <|-- TextureStructureException
+Usable <|.. Item
+GameObject <|-- Item
+Item +.. Item$ModelData
+Cloneable <|.. Item$ModelData
+Field <|-- Block
+Pane <|-- Inventory
+Register <|.. ItemRegister
+Enemy <|-- MeatSauce
+Pane <|-- MenuPane
+Exception <|-- TextureNotFoundException
+Item <|-- Food
+Ally <|-- Onigiri
+Initializable <|.. LoadingController
+Pane <|-- GamePane
+StdSerializer <|-- UdonSerialize
+UdonMonitorMBean <|.. UdonMonitor
+Tool <|-- TestTool
+@enduml

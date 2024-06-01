@@ -1,0 +1,50 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="udon_pasuta_build">
+    <output-path>$PROJECT_DIR$/out/artifacts/udon_pasuta_build</output-path>
+    <root id="root">
+      <element id="archive" name="udon_pasuta.jar">
+        <element id="module-output" name="udon_pasuta" />
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources/manifest" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.15.2" />
+        <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.15.2" />
+        <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.15.2" />
+        <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.15" />
+        <element id="library" level="project" name="Maven: jp.co.yahoo.yu_w_main:yu-lib:1.0-SNAPSHOT" />
+        <element id="library" level="project" name="Maven: net.java.dev.jna:jna-platform:5.13.0" />
+        <element id="library" level="project" name="Maven: net.java.dev.jna:jna:5.13.0" />
+        <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.24.0" />
+        <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.12.0" />
+        <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.21.1" />
+        <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.21.1" />
+        <element id="library" level="project" name="Maven: org.apiguardian:apiguardian-api:1.1.2" />
+        <element id="library" level="project" name="Maven: org.jetbrains:annotations:24.0.0" />
+        <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-api:5.10.0" />
+        <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.10.0" />
+        <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter-params:5.10.0" />
+        <element id="library" level="project" name="Maven: org.junit.jupiter:junit-jupiter:5.10.0" />
+        <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-commons:1.10.0" />
+        <element id="library" level="project" name="Maven: org.junit.platform:junit-platform-engine:1.10.0" />
+        <element id="library" level="project" name="Maven: org.opentest4j:opentest4j:1.3.0" />
+        <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.28" />
+      </element>
+      <element id="directory" name="lib-javafx">
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-base:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-media:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-media:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-swing:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-swing:win:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-web:21.0.1" />
+        <element id="library" level="project" name="Maven: org.openjfx:javafx-web:win:21.0.1" />
+      </element>
+    </root>
+  </artifact>
+</component>
