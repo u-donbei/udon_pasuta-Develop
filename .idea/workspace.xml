@@ -10,48 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24a68ab3-0584-4af3-9ffd-621e9bc85778" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/block/field/SoilRoadCorner1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/SettingPane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/BelowFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2024-05-04-udon-pasuta.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/2024-06-01-udon-pasuta.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/log/udon-pasuta.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/app/UdonbeiStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/app/UdonbeiStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/ObjectBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/ObjectBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/StatusMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/control/StatusMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/dto/Technique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/dto/Technique.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/framework/Collections_Original.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/misc/Collections_Original.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/framework/TextUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/misc/TextUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/framework/ValueChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/misc/ValueChecks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/Logging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/Logging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/BGMManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/BGMManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/CollisionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/CollisionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/SaveManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/SaveManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/WorldManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/WorldManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/action/ActionObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/action/ActionObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/block/Udon_House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/block/Udon_House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Udon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Udon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Ebi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Ebi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Onigiri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Onigiri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Soba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Soba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Somen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/ally/Somen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/MeatSauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/MeatSauce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/MeatSauce_Fork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/enemy/MeatSauce_Fork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/GameViewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/GameViewPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/plugin/PluginLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/save/UdonSave.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/variables/Variable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/variables/Variable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,36 +71,37 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultPlantUmlFileTemplate": "UML Activity",
-    "JUnit.SaveTest.executor": "Run",
-    "Maven.run.executor": "Run",
-    "Maven.udon_pasuta [com.mycila:license-maven-plugin:4.2:format].executor": "Run",
-    "Maven.udon_pasuta [compile].executor": "Run",
-    "Maven.udon_pasuta [deploy].executor": "Run",
-    "Maven.udon_pasuta [install].executor": "Run",
-    "Maven.udon_pasuta [org.apache.maven.plugins:maven-javadoc-plugin:3.5.0:javadoc].executor": "Run",
-    "Maven.udon_pasuta [org.projectlombok:lombok-maven-plugin:1.18.20.0:delombok].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "full.screen.before.presentation.mode": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/IdeaProjects/udon_pasuta/src/main/resources/css",
-    "project.structure.last.edited": "アーティファクト",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Activity&quot;,
+    &quot;JUnit.SaveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.run.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [com.mycila:license-maven-plugin:4.2:format].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [org.apache.maven.plugins:maven-javadoc-plugin:3.5.0:javadoc].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.udon_pasuta [org.projectlombok:lombok-maven-plugin:1.18.20.0:delombok].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/udon_pasuta/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;アーティファクト&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\IdeaProjects\udon_pasuta\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\udon_pasuta\src\main\resources\css" />
       <recent name="C:\Users\user\IdeaProjects\udon_pasuta\src\main\resources\fxml" />
-      <recent name="C:\Users\user\IdeaProjects\udon_pasuta\src\main\resources" />
       <recent name="C:\Users\user\IdeaProjects\udon_pasuta\out\artifacts\udon_pasuta_build\lib" />
       <recent name="C:\Users\user\IdeaProjects\udon_pasuta\target\classes" />
     </key>

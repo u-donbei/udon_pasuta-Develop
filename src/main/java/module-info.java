@@ -15,10 +15,12 @@ open module jp.co.yahoo.yu_w_main.udon_pasuta {
     requires com.fasterxml.jackson.databind;
     requires org.apache.commons.lang3;
     requires jp.co.yahoo.yu_w_main.yulib;
+    requires ch.qos.logback.classic;
+    requires ch.qos.logback.core;
     requires java.logging;
-    requires org.apache.logging.log4j;
-    requires org.apache.logging.log4j.core;
+    requires org.slf4j;
     requires java.naming;
+    requires java.management;
     requires org.apache.commons.compress;
     requires java.compiler;
     requires org.jetbrains.annotations;

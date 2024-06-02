@@ -35,6 +35,7 @@ import java.io.StringWriter;
 import java.lang.management.ManagementFactory;
 import java.net.URI;
 
+import static jp.co.yahoo.yu_w_main.udon_pasuta.logging.Logging.DEV;
 import static jp.co.yahoo.yu_w_main.udon_pasuta.logging.Logging.LOGGER;
 
 public final class UdonbeiStarter extends Application {
@@ -58,6 +59,13 @@ public final class UdonbeiStarter extends Application {
 	public void start(Stage stage) throws Exception {
 		LOGGER.debug("APPLICATION START.");
 		LOGGER.debug("MBean Register.");
+		if (DEV) {
+			LOGGER.trace("trace");
+			LOGGER.debug("debug");
+			LOGGER.info("info");
+			LOGGER.warn("warn");
+			LOGGER.error("error");
+		}
 		MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
 		mbs.registerMBean(new UdonMonitor(), UdonMonitorMBean.createObjectName());
 		theInstance = this;
