@@ -8,7 +8,7 @@ public final class ValueChecks {
 	private ValueChecks() {}
 	// @formatter:on
 	
-	public static void checkOnString(String s, String message) {
+	public static void checkString(String s, String message) {
 		if (s == null || (s.replaceAll(" ", "").equals("")) || (s.replaceAll("　", "").equals(""))) {
 			if (s == null) {
 				throw new IllegalArgumentException(message, new NullPointerException(""));
@@ -17,7 +17,7 @@ public final class ValueChecks {
 		}
 	}
 
-	public static void checkOnNotNegative(double i, String message) {
+	public static void checkNotNegative(double i, String message) {
 		if (i < 0) {
 			throw new IllegalArgumentException(message);
 		}

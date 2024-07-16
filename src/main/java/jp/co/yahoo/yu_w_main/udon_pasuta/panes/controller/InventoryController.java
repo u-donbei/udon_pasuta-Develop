@@ -146,15 +146,6 @@ public class InventoryController {
 				new ObjectBox<>(new TestTool()),
 				new ObjectBox<>(new TestTool()));
 
-		for (ObjectBox<Item> item : items) {
-			itemBoxs.getChildren().add(item);
-			item.setFocusTraversable(true);
-		}
-
-		for (ObjectBox<Tool> tool : tools) {
-			toolBoxs.getChildren().add(tool);
-			item.setFocusTraversable(true);
-		}
 
 		ebitenv = new ImageView(URI.create(PathConsts.TEXTURE_DIR.makeURI() + "/ebi.png").toString());
 		sobav = new ImageView(URI.create(PathConsts.TEXTURE_DIR.makeURI() + "/soba.png").toString());
@@ -280,40 +271,48 @@ public class InventoryController {
 		});
 
 
-		for (int i = 0; i < items.size(); i++) {
-			ObjectBox<Item> item = items.get(i);
+		for (int i = 0; i < udon.getItems().length; i++) {
+			ObjectBox<Item> item = new ObjectBox<>(udon.getItems()[i]);
+			itemBoxs.getChildren().add(item);
 			item.setFocusTraversable(true);
 			int finalI = i;
 			item.setOnMouseClicked(e -> {
 				if (!(item.getElement() instanceof Empty)) {
 					item.getElement().preUse(message, party, () -> {
-						item.setElement(new Empty());
-						items.set(finalI, item);
-						itemBoxs.getChildren().set(finalI, item);
+						udon.setItem(finalI, new Empty());
 					});
 				}
 			});
 		}
 
-		for (int i = 0; i < tools.size(); i++) {
-			ObjectBox<Tool> item = tools.get(i);
+		for (int i = 0; i < udon.getItems().length; i++) {
+			ObjectBox<Tool> item = new ObjectBox<>(udon.getTools()[i]);
+			toolBoxs.getChildren().add(item);
 			item.setFocusTraversable(true);
 			int finalI = i;
 			item.setOnMouseClicked(e -> {
 				if (!(item.getElement() instanceof EmptyTool)) {
 					item.getElement().preUse(message, party, () -> {
-						item.setElement(new EmptyTool());
-						tools.set(finalI, item);
-						toolBoxs.getChildren().set(finalI, item);
+						udon.setTool(finalI, new EmptyTool());
 					});
 				}
 			});
 		}
-		for (int i = 0; i < udon.getItems().length; i++) {
-			udon.getItems()[i] = items.get(i).getElement();
+	}
+
+	public void updateItem(Item[] items) {
+		System.out.println("updateItem");
+		for (int j = 0; j < itemBoxs.getChildren().size(); j++) {
+			ObjectBox<Item> i = (ObjectBox<Item>) itemBoxs.getChildren().get(j);
+			i.setElement(items[j]);
 		}
-		for (int i = 0; i < udon.getTools().length; i++) {
-			udon.getTools()[i] = tools.get(i).getElement();
+	}
+
+	public void updateTool(Tool[] tools) {
+		System.out.println("updateTool");
+		for (int j = 0; j < toolBoxs.getChildren().size(); j++) {
+			ObjectBox<Tool> i = (ObjectBox<Tool>) toolBoxs.getChildren().get(j);
+			i.setElement(tools[j]);
 		}
 	}
 }

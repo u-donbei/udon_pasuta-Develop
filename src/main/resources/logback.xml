@@ -22,7 +22,7 @@
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>./log/udon_pasuta-all.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>udon_pasuta-all-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>./log/udon_pasuta-all-%d{yyyy-MM-dd}.log</fileNamePattern>
 			<maxHistory>20</maxHistory>
 		</rollingPolicy>
 		<encoder>

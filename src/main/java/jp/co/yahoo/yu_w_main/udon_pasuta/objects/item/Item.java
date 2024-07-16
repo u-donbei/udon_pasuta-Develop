@@ -10,14 +10,10 @@ import jp.co.yahoo.yu_w_main.udon_pasuta.dto.Party;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.GameObject;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.Usable;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.character.Udon;
-import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.food.Agedama;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
 
 /**アイテムを表すクラス。
  *

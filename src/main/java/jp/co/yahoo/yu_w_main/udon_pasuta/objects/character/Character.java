@@ -52,7 +52,7 @@ public abstract class Character extends GameObject {
 	 * 
 	 * @exception IllegalArgumentException hpが負の数のとき*/
 	public void setHp(int hp) {
-		ValueChecks.checkOnNotNegative(hp, "HPが負の数です");
+		ValueChecks.checkNotNegative(hp, "HPが負の数です");
 		this.hp.set(hp);
 	}
 
@@ -69,7 +69,7 @@ public abstract class Character extends GameObject {
 	 * 
 	 * @exception IllegalArgumentException hpが負の数のとき*/
 	public void addHp(int hp) {
-		ValueChecks.checkOnNotNegative(hp, "HPが負の数です");
+		ValueChecks.checkNotNegative(hp, "HPが負の数です");
 		this.hp.set((int) (this.hp.get() + (hp)));
 	}
 
@@ -80,8 +80,8 @@ public abstract class Character extends GameObject {
 	 * 
 	 * @exception IllegalArgumentException hpが負の数のとき,hpがを減らしたときに負の数になる場合*/
 	public void removeHp(int hp) {
-		ValueChecks.checkOnNotNegative(hp, "HPが負の数です");
-		ValueChecks.checkOnNotNegative(this.hp.get() - hp, "HPを減らせません");
+		ValueChecks.checkNotNegative(hp, "HPが負の数です");
+		ValueChecks.checkNotNegative(this.hp.get() - hp, "HPを減らせません");
 		this.hp.set( (this.hp.get() - (hp)));
 	}
 

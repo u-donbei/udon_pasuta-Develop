@@ -9,20 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a68ab3-0584-4af3-9ffd-621e9bc85778" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/BelowFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="24a68ab3-0584-4af3-9ffd-621e9bc85778" name="変更" comment="logback.xmlの修正">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2024-05-04-udon-pasuta.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/2024-06-01-udon-pasuta.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/udon-pasuta.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/app/UdonbeiStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/app/UdonbeiStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/Logging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/logging/Logging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/dto/Technique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/dto/Technique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/dto/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/SaveManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/managers/SaveManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/misc/ValueChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/misc/ValueChecks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Udon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/character/Udon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/item/tool/Oroshigane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/objects/item/tool/Oroshigane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jp/co/yahoo/yu_w_main/udon_pasuta/panes/controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +33,10 @@
       <list>
         <option value="AnnotationType" />
         <option value="module-info" />
-        <option value="Interface" />
         <option value="UML Class" />
         <option value="UML Activity" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -209,6 +208,23 @@
       <option name="presentableId" value="Default" />
       <updated>1697971254988</updated>
     </task>
+    <task id="LOCAL-00001" summary="ロガーの修正">
+      <option name="closed" value="true" />
+      <created>1717290050211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717290050211</updated>
+    </task>
+    <task id="LOCAL-00002" summary="logback.xmlの修正">
+      <option name="closed" value="true" />
+      <created>1717835394892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717835394893</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +242,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="ロガーの修正" />
+    <MESSAGE value="logback.xmlの修正" />
+    <option name="LAST_COMMIT_MESSAGE" value="logback.xmlの修正" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

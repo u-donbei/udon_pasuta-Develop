@@ -7,7 +7,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import javafx.application.Platform;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableObjectValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
@@ -18,22 +21,20 @@ import jp.co.yahoo.yu_w_main.udon_pasuta.constants.Facing;
 import jp.co.yahoo.yu_w_main.udon_pasuta.constants.PathConsts;
 import jp.co.yahoo.yu_w_main.udon_pasuta.control.Message;
 import jp.co.yahoo.yu_w_main.udon_pasuta.dto.Technique;
+import jp.co.yahoo.yu_w_main.udon_pasuta.logging.Logging;
 import jp.co.yahoo.yu_w_main.udon_pasuta.misc.Collections_Original;
 import jp.co.yahoo.yu_w_main.udon_pasuta.misc.ValueChecks;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.character.enemy.Enemy;
-import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.Empty;
-import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.Item;
-import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.Mentsuyu;
-import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.Negi;
+import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.*;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.food.KizamiNori;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.tool.EmptyTool;
+import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.tool.Oroshigane;
 import jp.co.yahoo.yu_w_main.udon_pasuta.objects.item.tool.Tool;
+import jp.co.yahoo.yu_w_main.udon_pasuta.panes.controller.InventoryController;
 import jp.co.yahoo.yu_w_main.udon_pasuta.save.deserialize.UdonDeserialize;
 import jp.co.yahoo.yu_w_main.udon_pasuta.save.serialize.UdonSerialize;
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -50,6 +51,30 @@ import java.util.concurrent.atomic.AtomicReference;
 @JsonSerialize(using = UdonSerialize.class)
 @JsonDeserialize(using = UdonDeserialize.class)
 public class Udon extends Character {
+	private static final Item[] DEFAULT_ITEMS = {
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+			new Daikon(),
+	};
+	private static final Tool[] DEFAULT_TOOLS = {
+			new Oroshigane(),
+			new Oroshigane(),
+			new Oroshigane(),
+			new EmptyTool(),
+			new EmptyTool(),
+			new EmptyTool(),
+			new EmptyTool(),
+			new EmptyTool(),
+			new EmptyTool(),
+			new EmptyTool(),
+	};
 	private transient int stepFrameCount;
 	private static final long serialVersionUID = 1L;
 	/**
@@ -107,12 +132,12 @@ public class Udon extends Character {
 	/**
 	 * アイテム
 	 */
-	private final Item[] items = new Item[10];
+	private final List<ObjectProperty<Item>> items = new ArrayList<>();
 
 	/**
 	 * 道具
 	 */
-	private final Tool[] tools = new Tool[10];
+	private final List<ObjectProperty<Tool>>  tools = new ArrayList<>();
 
 	/**
 	 * コンストラクタ。
@@ -124,13 +149,21 @@ public class Udon extends Character {
 		facing = Facing.SOUTH;
 		hitPriority = 10;
 
-		//アイテムをEmptyで埋める
-		for (int i = 0; i < items.length; i++) {
-			items[i] = new Empty();
+		//アイテムを設定する
+		for (int i = 0; i < 10; i++) {
+			SimpleObjectProperty<Item> prop = new SimpleObjectProperty<>(DEFAULT_ITEMS[i]);
+			prop.addListener((ob, o, n) -> {
+				InventoryController.getInstance().updateItem(getItems());
+			});
+			items.add(prop);
 		}
 
-		for (int i = 0; i < tools.length; i++) {
-			tools[i] = new EmptyTool();
+		for (int i = 0; i < 10; i++) {
+			SimpleObjectProperty<Tool> prop = new SimpleObjectProperty<>(DEFAULT_TOOLS[i]);
+			prop.addListener((ob, o, n) -> {
+				InventoryController.getInstance().updateTool(getTools());
+			});
+			tools.add(prop);
 		}
 	}
 
@@ -168,7 +201,7 @@ public class Udon extends Character {
 	 * @param level 新しい値
 	 */
 	public void setLevel(int level) {
-		ValueChecks.checkOnNotNegative(level, "レベルが不正です。");
+		ValueChecks.checkNotNegative(level, "レベルが不正です。");
 		setHp(getByLevelMaxHP(level));
 		this.level.set(level);
 	}
@@ -224,11 +257,11 @@ public class Udon extends Character {
 		message.reText(getName() + "の" + technique.get().getName() + "こうげき!", null, 100);
 		//攻撃
 		int damage = 0;
-		if (technique.get().getMp() <= 0 && technique.get().getMp() != Double.POSITIVE_INFINITY) {
+		if (technique.get().getPP() <= 0 && technique.get().getPP() != Double.POSITIVE_INFINITY) {
 			message.reText(getName() + "はこうげきにしっぱいした!", null, 100);
 		} else {
 			try {
-				technique.get().setMp(technique.get().getMp() - 1);
+				technique.get().setPP(technique.get().getPP() - 1);
 				target.removeHp(technique.get().getDamage());
 				damage = technique.get().getDamage();
 			} catch (IllegalArgumentException e) {
@@ -303,7 +336,8 @@ public class Udon extends Character {
 		Platform.enterNestedEventLoop("b");
 		//攻撃
 		int damage = 0;
-		if (technique.get().getMp() <= 0 || !new HashSet<>(Arrays.stream(items)
+		if (technique.get().getPP() <= 0 || !new HashSet<>(items.stream()
+				.map(ObservableObjectValue::get)
 				.map(Item::getClass)
 				.toList())
 				.containsAll(technique.get().getNeedItems())) {
@@ -311,7 +345,7 @@ public class Udon extends Character {
 			Platform.enterNestedEventLoop("b");
 		} else {
 			try {
-				technique.get().setMp(technique.get().getMp() - 1);
+				technique.get().setPP(technique.get().getPP() - 1);
 				target.removeHp(technique.get().getDamage());
 				damage = technique.get().getDamage();
 			} catch (IllegalArgumentException e) {
@@ -422,7 +456,7 @@ public class Udon extends Character {
 	}
 
 	public void removeXP(int xp) {
-		ValueChecks.checkOnNotNegative(xp, "減算するXPが不正です");
+		ValueChecks.checkNotNegative(xp, "減算するXPが不正です");
 		this.xp.set((int) (this.xp.get() - (xp)));
 	}
 
@@ -435,10 +469,33 @@ public class Udon extends Character {
 	}
 
 	public Item[] getItems() {
-		return items;
+		//List<Item>に変換
+		List<Item> items = new ArrayList<>();
+		for (ObjectProperty<Item> item : this.items) {
+			items.add(item.get());
+		}
+		Logging.LOGGER.debug(items.toString());
+		Item[] res = new Item[10];
+		return items.toArray(res);
+	}
+
+	public void setItem(int index, Item value) {
+		items.get(index).set(value);
+		InventoryController.getInstance().updateItem(getItems());
+	}
+
+	public void setTool(int index, Tool value) {
+		tools.get(index).set(value);
+		InventoryController.getInstance().updateTool(getTools());
 	}
 
 	public Tool[] getTools() {
-		return tools;
+		//List<Item>に変換
+		List<Tool> items = new ArrayList<>();
+		for (ObjectProperty<Tool> item : this.tools) {
+			items.add(item.get());
+		}
+		Tool[] res = new Tool[10];
+		return items.toArray(res);
 	}
 }

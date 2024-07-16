@@ -30,16 +30,18 @@ public class Oroshigane extends Tool {
 	}
 
 	public void useDaikon(Udon udon) {
+		System.out.println("useDaikon");
 		Item[] items = udon.getItems();
-		if (Arrays.stream(items).anyMatch(t -> t instanceof Daikon)) {	//うどんべいのアイテム内に大根があるかどうかを検査する
+		Logging.LOGGER.debug(Arrays.toString(items));
 			int daikonIdx;
-			for (int i = 0; i < 10; i++) {
+			while (true) {
 				daikonIdx = new Random().nextInt(10);
 				if (items[daikonIdx] instanceof Daikon) {
-					items[daikonIdx] = new DaikonOroshi();
+					udon.setItem(daikonIdx, new DaikonOroshi());
+					break;
 				}
 			}
-		}
+
 	}
 
 	@Override
